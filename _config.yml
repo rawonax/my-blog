@@ -53,4 +53,5 @@ defaults:
 permalink: /:categories/:title
 exclude:
   - react-app
+include:
   - react-build

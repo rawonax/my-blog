@@ -55,3 +55,6 @@ exclude:
   - react-app
 include:
   - react-build
+  - react-build/static
+  - react-build/static/css
+  - react-build/static/js

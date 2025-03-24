@@ -10,7 +10,8 @@ const pets = [
     gender: "공주님",
     birth: "2024년 3월 13일생",
     hobby: "땅 파기, 휴지 물어뜯기",
-    image: "/react-build/img/nasus.jpg",
+    thumb: "/react-build/img/nasus.jpg",
+    full: "/react-build/img/nasus-full.jpg",
   },
   {
     id: "renek",
@@ -20,7 +21,8 @@ const pets = [
     gender: "왕자님",
     birth: "2024년 10월 18일 만남",
     hobby: "밖에 나가고 싶다고 찡찡 → 열어주면 안 나감",
-    image: "/react-build/img/renek.jpg",
+    thumb: "/react-build/img/renek.jpg",
+    full: "/react-build/img/renek-full.jpg",
   },
   {
     id: "tan",
@@ -30,7 +32,8 @@ const pets = [
     gender: "왕자님",
     birth: "2024년 10월 28일생",
     hobby: "후루랑 껴안기",
-    image: "/react-build/img/tan.jpg",
+    thumb: "/react-build/img/tan.jpg",
+    full: "/react-build/img/tan-full.jpg",
   },
   {
     id: "huru",
@@ -40,9 +43,11 @@ const pets = [
     gender: "공주님",
     birth: "2024년 10월 9일생",
     hobby: "탄이랑 껴안기",
-    image: "/react-build/img/huru.jpg",
+    thumb: "/react-build/img/huru.jpg",
+    full: "/react-build/img/huru-full.jpg",
   },
 ];
+
 
 function PetCard({ pet, onBack }) {
   const isCouple = pet.id === "tan" || pet.id === "huru";
@@ -51,7 +56,7 @@ function PetCard({ pet, onBack }) {
   return (
     <div className="card">
       <img
-        src={isCouple ? coupleImage : pet.image}
+        src={pet.full}
         alt={pet.name}
         className="main-img"
       />
@@ -75,14 +80,23 @@ function App() {
   const [selected, setSelected] = useState(null);
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        cursor: "url(/mouseimg.png) 16 16, auto"
+      }}
+    >
       {selected === null ? (
         <>
           <h1>🐾 우리 가족을 소개합니다 🐾</h1>
           <div className="grid">
             {pets.map((pet) => (
-              <div key={pet.id} className="card-thumb" onClick={() => setSelected(pet)}>
-                <img src={pet.image} alt={pet.name} />
+              <div
+                key={pet.id}
+                className="card-thumb"
+                onClick={() => setSelected(pet)}
+              >
+                <img src={pet.thumb} alt={pet.name} />
                 <p>{pet.name}</p>
               </div>
             ))}

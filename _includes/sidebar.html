@@ -1,0 +1,13 @@
+<aside class="sidebar">
+    <img src="{{ site.author.avatar }}" alt="avatar" class="avatar">
+    <h2>{{ site.author.name }}</h2>
+    <p>{{ site.author.bio }}</p>
+  
+    <h3>📁 카테고리</h3>
+    <ul>
+      {% for category in site.categories %}
+        <li><a href="/categories/{{ category[0] }}">{{ category[0] }} ({{ category[1].size }})</a></li>
+      {% endfor %}
+    </ul>
+  </aside>
+  

@@ -1,0 +1,18 @@
+---
+layout: default
+title: 카테고리
+---
+
+<h1>📂 카테고리별 포스트</h1>
+<ul>
+  {% for category in site.categories %}
+    <li>
+      <h2>{{ category[0] }}</h2>
+      <ul>
+        {% for post in category[1] %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a> <small>({{ post.date | date: "%Y-%m-%d" }})</small></li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>

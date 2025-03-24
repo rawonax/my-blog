@@ -1,0 +1,36 @@
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+
+# --------------------
+# 기본
+.DS_Store
+Thumbs.db
+
+# --------------------
+# node + React
+node_modules/
+build/
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --------------------
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# --------------------
+# VSCode (옵션)
+.vscode/
+
+# --------------------
+# 기타
+*.log
+*.tmp
+*.swp

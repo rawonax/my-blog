@@ -2,7 +2,9 @@
 layout: post
 title: "개발자들을 위한 블로그 비교분석"
 date: 2025-03-24 12:42:00 +0900
-categories: [블로그, 비교]
+categories: 
+    - blogusss
+author: rawonax
 ---
 
 IT 업계에 종사한다면 누구나 기술블로그를 만들고 싶을 것이다.

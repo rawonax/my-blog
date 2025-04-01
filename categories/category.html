@@ -1,0 +1,25 @@
+---
+layout: default
+title: "{{ page.category }}"
+category: "{{ page.category }}"
+---
+
+<h1>📂 "{{ page.category }}" 카테고리의 포스트</h1>
+
+<div class="category-posts">
+  {% assign category_posts = site.posts | where: "categories", page.category %}
+  {% if category_posts.size > 0 %}
+    <ul class="post-list">
+      {% for post in category_posts %}
+        <li class="post-item">
+          <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
+          <p class="post-meta">Posted on {{ post.date | date: "%Y-%m-%d" }} 🗓️ by {{ post.author | default: "Anonymous" }} 👩‍💻</p>
+          <p class="post-excerpt">{{ post.excerpt }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>이 카테고리에는 포스트가 없습니다.</p>
+  {% endif %}
+</div>
+ 
